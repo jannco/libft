@@ -11,6 +11,6 @@ typedef struct s_list
 	struct s_list	*next;
 }			t_list;
 
-
+void	*ft_memcpy(void *dest, const void *src, size_t n);
 
 #endif
