@@ -12,35 +12,46 @@
 
 #include "libft.h"
 
-void	*ft_memmove(void *str1, const void *str2, size_t n)
+void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char *s1;
-	const char *s2;
+	char		*d;
+	const char	*s;
+	size_t		i;
 
-	s1 = str1;
-	s2 = str2;
-	if (s1 > s2)
+	i = n;
+	d = dest;
+	s = src;
+	if (!dest && !src)
+		return (NULL);
+	if (dest > src)
 	{
-		while (n >= 0)
-		{
-			s1[n] = s2[n];
-			n--;
-		}
+		while (--i)
+			d[i] = s[i];
 	}
 	else
-		memcpy(s1, s2, n);
+		while (--n)
+			*(d++) = *(s++);
+	return (dest);
 }
-
-int main()
+/*
+int	main(void)
 {
-	char csrc[100] = "Geeksfor";
-	char *fir, *sec;
+	char	src[] = "Hello, Word!";
+	char	dest[] = "1234567890123456789";
 
-	fir = csrc;
-	sec = csrc;
-	ft_memmove(fir + 2, fir, 10);
-	printf("ft_memmove:  %s\n", fir);
-	memmove(sec + 2, sec, 10);
-	printf("memmove: %s\n", sec);
-	return 0;
-}
+	printf("To overlap\n");
+	ft_memmove(src, dest, 13);
+	printf("src: %s\n", src);
+	printf("dest: %s\n", dest);
+
+	printf("Overlap, dest before src\n");
+	ft_memmove(dest, src, 6);
+	printf("src: %s\n", src);
+	printf("dest: %s\n", dest);
+
+	printf("Overlap, src before dest\n");
+	ft_memmove(src, src + 6, 6);
+	printf("src: %s\n", src);
+	printf("dest: %s\n", dest);
+	return (0);
+} */
