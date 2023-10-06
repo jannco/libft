@@ -6,11 +6,13 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:20:45 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/03 14:51:42 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/06 18:20:17 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+#include "libft.h"
+
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

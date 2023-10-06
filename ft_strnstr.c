@@ -1,35 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 14:34:58 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:16 by yadereve         ###   ########.fr       */
+/*   Created: 2023/10/06 15:49:00 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/06 19:19:54 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 {
-	char	*str;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
-	str = s;
-	while (i < n)
+	j = 0;
+	while (str[i] && i < len)
 	{
-		str[i] = 0;
+		while (to_find[j] == str[i + j] && str[i + j] != '\0')
+		{
+			j++;
+		}
+		if (to_find[j] == '\0')
+			return ((char *)str + i);
 		i++;
 	}
+	return (0);
 }
 /*
+#include <stdio.h>
 int main()
 {
-	char buffer[10];
+	char s1[] = {"hello word hello"};
+	char s2[] = {"rd"};
 
-	bzero(buffer, sizeof(buffer));
-	return 0;
+	printf("%s", strnstr(s1, s2, 4));
+	return(0);
 } */

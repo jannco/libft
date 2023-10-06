@@ -6,22 +6,24 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:00:17 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/03 16:59:51 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:05:01 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strrchr(const char *s, int c)
+#include "libft.h"
+
+char	*ft_strrchr(const char *s, int c)
 {
-	const char *lastchar;
+	const char	*lastchar;
 
 	lastchar = 0;
-	while(*s)
+	while (*s)
 	{
-		if(*s == c)
+		if (*s == c)
 			lastchar = s;
 		s++;
 	}
-	while(*lastchar)
+	while (*lastchar)
 	{
 		return ((char *)lastchar);
 		lastchar++;
@@ -29,9 +31,6 @@ char *ft_strrchr(const char *s, int c)
 	return (0);
 }
 /*
-#include <string.h>
-#include <stdio.h>
-
 int main()
 {
 	char c = 'a';

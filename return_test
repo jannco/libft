@@ -1,0 +1,375 @@
+Summary: no bonus
+
+Missing: functions: toupper, substr, strjoin, strtrim, split, itoa, strmapi,
+		striteri, putchar_fd, putstr_fd, putendl_fd, putnbr_fd
+
+Failed: tests: ft_memmove, strchr, strrchr, atoi, ft_atoi, ft_strlcpy, memmove,
+		ft_strdup, strnstr, ft_strnstr, ft_strrchr, fsoares, ft_memcpy, memcpy,
+		strlcpy, ft_memchr, ft_strchr, strdup
+
+Passed: tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset,
+		bzero, strlcat, tolower, strncmp, memchr, memcmp, calloc
+
+
+➜  Libft paco
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                Welcome to Francinette, a 42 tester framework!                ║
+╚═══════════════════════╦══════════════════════════════╦═══════════════════════╝
+                        ║             libft            ║
+                        ╚══════════════════════════════╝
+✔ Preparing framework
+✔ Executing: norminette
+✔ Executing: make fclean all (no bonus)
+ℹ Executing: libft-war-machine (https://github.com/y3ll0w42/libft-war-machine)
+--------------------------------------------------------------------------------
+|                              COMPILING LIBFT                                 |
+--------------------------------------------------------------------------------
+rules:
+all        $(NAME)       fclean       re           clean       bonus     libft.a
+ok         ok            ok           ok           ok          missing   found
+
+FUNCTION         TESTS                RESULT
+ft_isalpha       ✓✓✓✓✓✓✓              OK
+ft_isdigit       ✓✓✓✓✓✓✓              OK
+ft_isalnum       ✓✓✓✓✓✓✓              OK
+ft_isascii       ✓✓✓✓✓✓✓✓             OK
+ft_isprint       ✓✓✓✓✓✓✓              OK
+ft_strlen        ✓✓✓✓✓✓               OK
+ft_memset        ✓✓✓✓                 OK
+ft_bzero         ✓✓                   OK
+ft_memcpy        ✗✗✗                  KO
+ft_memmove       ✗✗✗✗✗                KO
+ft_strlcpy       ✓✓✓✗✓                KO
+ft_strlcat       ✓✓✓✓✓✓✓✓✓            OK
+ft_tolower       ✓✓✓✓✓✓✓              OK
+ft_strchr        ✓✓✓✓✗✗               KO
+ft_strrchr       ✓✓✓✓✗✓✓✗             KO
+ft_strncmp       ✓✓✓✓✓✓✓✓✓✓✓          OK
+ft_memchr        ✓✓✓✓✓✓               OK
+ft_memcmp        ✓✓✓✓✓✓✓✓✓            OK
+ft_strnstr       ✓✓✓✓✗✓✓✓✗✓           KO
+ft_atoi          ✓✓✓✓✓✓✗✗✗✗✓✓✓✓✓✓✓✓✓  KO
+ft_calloc        ✓                    OK
+ft_strdup        ✗                    KO
+
+Abort: A  Bus error: B  Segmentation fault: S  Timeout: T
+
+More information in: /nfs/homes/yadereve/francinette/temp/libft/war-machine/deepthought
+
+Errors in memcpy: /nfs/homes/yadereve/francinette/temp/libft/war-machine/tests/Part1_functions/ft_memcpy
+Test 1:
+    if (mem != ft_memcpy(mem, "zyxwvutsrqponmlkjihgfedcba", 14))
+        write(1, "dest's adress was not returned\n", 31);
+    write(1, mem, 30);
+Expected (cat -e test01.output):
+zyxwvutsrqponmjjjjjjjjjjjjjjjj
+Your result (cat -e user_output_test01):
+zyxwvutsrqponjjjjjjjjjjjjjjjjj
+Test 2:
+    if (mem != ft_memcpy(mem, "zyxwvutst", 0))
+        write(1, "dest's adress was not returned\n", 31);
+    write(1, mem, 30);
+Expected (cat -e test02.output):
+jjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
+Your result (cat -e user_output_test02):
+
+Test 3:
+    if (mem != ft_memcpy(mem, "zy\0xw\0vu\0\0tsr", 11))
+        write(1, "dest's adress was not returned\n", 31);
+    write(1, mem, 30);
+Expected (cat -e test03.output):
+zy^@xw^@vu^@^@tjjjjjjjjjjjjjjjjjjj
+Your result (cat -e user_output_test03):
+zy^@xw^@vu^@^@jjjjjjjjjjjjjjjjjjjj
+Errors in memmove: /nfs/homes/yadereve/francinette/temp/libft/war-machine/tests/Part1_functions/ft_memmove
+Test 1:
+    if (dest != ft_memmove(dest, "consectetur", 5))
+        write(1, "dest's adress was not returned\n", 31);
+    write(1, dest, 22);
+Expected (cat -e test01.output):
+conseipsum dolor sit a
+Your result (cat -e user_output_test01):
+oonseipsum dolor sit a
+Test 2:
+    if (dest != ft_memmove(dest, "con\0sec\0\0te\0tur", 10))
+        write(1, "dest's adress was not returned\n", 31);
+    write(1, dest, 22);
+Expected (cat -e test02.output):
+con^@sec^@^@t dolor sit a
+Your result (cat -e user_output_test02):
+oon^@sec^@^@t dolor sit a
+Test 3:
+    if (dest != ft_memmove(dest, src, 8))
+        write(1, "dest's adress was not returned\n", 31);
+    write(1, dest, 22);
+Expected (cat -e test03.output):
+lorem ipum dolor sit a
+Your result (cat -e user_output_test03):
+oorem ipum dolor sit a
+...
+
+File too large. To see full report open: /nfs/homes/yadereve/francinette/temp/libft/war-machine/errors.log
+
+✔ Compiling tests: libftTester (https://github.com/Tripouille/libftTester)
+ℹ Testing:
+ft_isalpha	: 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7.OK 8.OK
+ft_isdigit	: 1.OK 2.OK 3.OK 4.OK
+ft_isalnum	: 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7.OK 8.OK 9.OK 10.OK 11.OK 12.OK
+ft_isascii	: 1.OK 2.OK 3.OK 4.OK
+ft_isprint	: 1.OK 2.OK 3.OK 4.OK
+ft_strlen	: 1.OK 2.OK
+ft_memset	: 1.OK 2.OK
+ft_bzero	: 1.OK 2.OK 3.OK
+ft_memcpy	: 1.SIGSEGV
+ft_memmove	: 1.KO 2.SIGSEGV
+ft_strlcpy	: 1.OK 2.KO 3.OK 4.OK 5.KO 6.KO 7.KO 8.OK 9.OK
+ft_strlcat	: 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7.OK 8.OK 9.OK 10.OK 11.OK 12.OK 13.OK 14.OK 15.OK 16.OK 17.OK
+ft_tolower	: 1.OK 2.OK 3.OK 4.OK
+ft_strchr	: 1.OK 2.OK 3.OK 4.KO 5.KO
+ft_strrchr	: 1.OK 2.OK 3.OK 4.SIGSEGV
+ft_strncmp	: 1.OK 2.OK 3.OK 4.OK 5.OK 6.OK 7.OK 8.OK 9.OK 10.OK 11.OK 12.OK 13.OK 14.OK 15.OK 16.OK
+ft_memchr	: 1.OK 2.OK 3.OK 4.OK 5.KO
+ft_memcmp	: 1.OK 2.OK 3.OK 4.OK 5.OK
+ft_strnstr	: 1.OK 2.OK 3.OK 4.OK 5.KO 6.KO 7.OK 8.OK 9.OK 10.OK 11.KO 12.OK 13.OK 14.OK
+ft_atoi		: 1.OK 2.OK 3.KO 4.KO 5.OK 6.OK 7.OK 8.OK 9.OK 10.OK 11.OK 12.KO 13.KO 14.KO 15.KO 16.OK 17.OK
+ft_calloc	: 1.OK 2.MOK
+
+
+Errors in:
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_memcpy_test.cpp:
+SIGSEGV 21: 	/* 1 */ check(dest[0] == 'A'); showLeaks();
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_memmove_test.cpp:
+KO  24: 	/* 1 */ check(ft_memmove(s0, s, 7) == s0 && !memcmp(s, s0, 7)); showLeaks(); //Post 0
+SIGSEGV 25: 	/* 2 */ check(ft_memmove(s, s + 2, 0) && !memcmp(s, sCpy, 7)); showLeaks(); //0 move
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_strlcpy_test.cpp:
+KO  21: 	/* 2 */ check(ft_strlcpy(dest, src, 1) == strlen(src) && dest[0] == 0 && dest[1] == 'A'); showLeaks();
+KO  24: 	/* 5 */ check(ft_strlcpy(dest, src, 6) == strlen(src) && !memcmp(src, dest, 5) && dest[5] == 0); showLeaks(); memset(dest, 'A', 10);
+KO  25: 	/* 6 */ check(ft_strlcpy(dest, src, 7) == strlen(src) && !memcmp(src, dest, 7)); showLeaks(); memset(dest, 'A', 10);
+KO  26: 	/* 7 */ check(ft_strlcpy(dest, src, 8) == strlen(src) && !memcmp(src, dest, 7)); showLeaks(); memset(dest, 'A', 10);
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_strchr_test.cpp:
+KO  21: 	/* 4 */ check(ft_strchr(s, 0) == s + strlen(s)); showLeaks();
+KO  22: 	/* 5 */ check(ft_strchr(s, 't' + 256) == s); showLeaks();
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_strrchr_test.cpp:
+SIGSEGV 23: 	/* 4 */ check(ft_strrchr(s, 'z') == NULL); showLeaks();
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_memchr_test.cpp:
+KO  23: 	/* 5 */ check(ft_memchr(s, 2 + 256, 3) == s + 2); showLeaks(); //Cast check
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_strnstr_test.cpp:
+KO  25: 	/* 5 */ check(ft_strnstr(empty, "", -1) == empty); showLeaks();
+KO  26: 	/* 6 */ check(ft_strnstr(empty, "", 0) == empty); showLeaks();
+KO  31: 	/* 11 */ check(ft_strnstr(haystack, "cd", 8) == NULL); showLeaks();
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_atoi_test.cpp:
+KO  23: 	/* 3 */ check(ft_atoi((e + "--1").c_str()) == 0); showLeaks();
+KO  24: 	/* 4 */ check(ft_atoi((e + "++1").c_str()) == 0); showLeaks();
+KO  32: 	/* 12 */ check(ft_atoi("-+42") == 0); showLeaks();
+KO  33: 	/* 13 */ check(ft_atoi("+-42") == 0); showLeaks();
+KO  34: 	/* 14 */ check(ft_atoi((string("+") + e + "42").c_str()) == 0); showLeaks();
+KO  35: 	/* 15 */ check(ft_atoi((string("-") + e + "42").c_str()) == 0); showLeaks();
+
+For /nfs/homes/yadereve/francinette/tests/libft/Tripouille/tests/ft_strdup_test.cpp:
+KO  19: 	/* 1 */ check(!strcmp(s, "coucou"));
+
+✔ Compiling tests: libft-unit-test (https://github.com/alelievr/libft-unit-test)
+ℹ Testing:
+ft_isalpha      : [OK]
+ft_isdigit      : [OK]
+ft_isalnum      : [OK]
+ft_isascii      : [OK]
+ft_isprint      : [OK]
+ft_strlen       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_memset       : [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_bzero        : [OK] [OK] [OK] [OK]
+ft_memcpy       : [FAILED] [CRASH] [CRASH] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+[fail]: your memcpy doesn't work with basic params
+[crash]: your memcpy's return is false/doesn't work with basic params
+[crash]: your memcpy does not work when call with 0
+[fail]: your memcpy does not work with basic params
+
+ft_memmove      : [FAILED] [CRASH] [FAILED] [FAILED] [FAILED] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+[fail]: your memmove does not work with basic input
+[crash]: your memmove's return is false/does not work with basic input
+[fail]: your memmove does not work with \0 and others unsigned char codes
+[fail]: your memmove does not work with integers copy
+[fail]: your memmove does not support the overlap (test 1)
+
+ft_strlcpy      : [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_strlcat      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_tolower      : [OK]
+ft_strchr       : [OK] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK]
+[fail]: your strchr does not work with \0
+
+ft_strrchr      : [OK] [OK] [OK] [CRASH] [CRASH] [CRASH] [CRASH] [OK]
+[crash]: your strrchr does not work with unicode
+[crash]: your strrchr does not work with \0
+[crash]: your strrchr does not work with empty string
+[crash]: your strrchr crash because it read too many bytes or attempt to write on s !
+
+ft_strncmp      : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_memchr       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_memcmp       : [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK] [OK]
+ft_strnstr      : [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK]
+[fail]: your strnstr does not work with basic input
+[fail]: your strnstr does not work with empty strings and 0 length
+
+ft_atoi         : [OK] [OK] [OK] [OK] [OK] [FAILED] [OK] [OK] [OK] [OK] [OK] [KO] [KO] [OK]
+[fail]: your atoi is not working with blanks
+[KO]: your atoi does not work with the plus sign and spaces
+[KO]: your atoi does not work with the plus sign and spaces
+
+ft_calloc       : [OK] [OK] [OK] [OK] [OK]
+ft_strdup       : [CRASH] [FAILED] [CRASH] [OK] [FAILED] [OK] [OK]
+[crash]: you didn't protect your malloc return
+[fail]: your strdup doesn't work with basic input
+[crash]: your strdup don't work with empty string
+[fail]: your strdup does not add \0 at the end of the string
+
+
+[fail]: your memcpy doesn't work with basic params
+ Test code:
+ 	char src[] = "test basic du memcpy !";
+ 	char buff1[22];
+ 	char buff2[22];
+
+ 	memcpy(buff1, src, 22);
+ 	ft_memcpy(buff2, src, 22);
+ 	if (!memcmp(buff1, buff2, 22))
+ 		exit(TEST_SUCCESS);
+ 	exit(TEST_FAILED);
+
+ Diffs:
+       memcpy: |test basic du memcpy !|
+    ft_memcpy: |test basic du memcpy |
+
+ [crash]: your memcpy's return is false/doesn't work with basic params
+ Test code:
+ 	char src[] = "test basic du memcpy !";
+ 	char buff1[22];
+ 	char *r1 = memcpy(buff1, src, 22);
+ 	char *r2 = ft_memcpy(buff1, src, 22);
+
+ 	if (r1 != r2)
+ 		exit(TEST_FAILED);
+ 	r1 = memcpy("", src, 0);
+ 	r2 = ft_memcpy("", src, 0);
+ 	if (r1 != r2)
+ 		exit(TEST_FAILED);
+ 	exit(TEST_SUCCESS);
+
+
+ [crash]: your memcpy does not work when call with 0
+ Test code:
+ 	char buff[] = "test 0 du memcpy !";
+ 	char *src = "phrase differente pour le test";
+ 	char buff2[] = "phrase differente pour le test";
+
+ 	ft_memcpy(buff2, buff, 0);
+ 	if (!memcmp(src, buff2, strlen(buff2)))
+ 		exit(TEST_SUCCESS);
+ 	exit(TEST_FAILED);
+
+
+ [fail]: your memcpy does not work with basic params
+ Test code:
+ 	char src[] = "test basic !";
+ 	char buff1[] = "the cake is a lie !\0I'm hidden lol\r\n";
+ 	char buff2[] = "the cake is a lie !\0I'm hidden lol\r\n";
+
+...
+
+File too large. To see full report open: /nfs/homes/yadereve/francinette/temp/libft/alelievr/result.log
+
+✔ Compiling tests: fsoares (my own)
+ℹ Testing:
+ft_isalpha      : OK
+ft_isdigit      : OK
+ft_isalnum      : OK
+ft_isascii      : OK
+ft_isprint      : OK
+ft_strlen       : OK
+ft_memset       : OK
+ft_bzero        : OK
+ft_memcpy       : 1.KO Segfault
+ft_memmove      : 4.KO Segfault
+ft_strlcpy      : KO
+ft_strlcat      : OK
+ft_tolower      : OK
+ft_strchr       : KO
+ft_strrchr      : 2.KO Segfault
+ft_strncmp      : OK
+ft_memchr       : KO
+ft_memcmp       : OK
+ft_strnstr      : KO
+ft_atoi         : KO
+ft_calloc       : OK
+
+Errors found:
+For ft_memcpy, in /nfs/homes/yadereve/francinette/tests/libft/fsoares/test_memcpy.c:
+
+Error in test 1: : Segmentation fault!
+For ft_memmove, in /nfs/homes/yadereve/francinette/tests/libft/fsoares/test_memmove.c:
+
+Error in test 1: ft_memmove(0x7ffe90976a20, 0x7ffe90976a22: "123456", 4): different memory
+expected:
+0000: 3132 3334 3334 3536 0011 1111 1111 1111 ->  12343456........
+yours:
+0000: 3132 3332 3334 3536 0011 1111 1111 1111 ->  12323456........
+
+Error in test 2: ft_memmove(0x7ffe90976a22, 0x7ffe90976a20: "123456", 4): different memory
+expected:
+0000: 3132 3334 0011 1111 1111 1111 1111 1111 ->  1234............
+yours:
+0000: 3332 3334 0011 1111 1111 1111 1111 1111 ->  3234............
+
+Error in test 4: ft_memmove(0x7ffe90976a22, 0x7ffe90976a20: "123456", 0): Segmentation fault!
+For ft_strlcpy, in /nfs/homes/yadereve/francinette/tests/libft/fsoares/test_strlcpy.c:
+
+Error in test 4: ft_strlcpy(dest, "aaa", 4): different memory
+expected:
+0000: 6161 6100 1111 1111 1111 1111 1111 1111 ->  aaa.............
+yours:
+0000: 6161 0011 1111 1111 1111 1111 1111 1111 ->  aa..............
+
+
+For ft_strchr, in /nfs/homes/yadereve/francinette/tests/libft/fsoares/test_strchr.c:
+
+Error in test 3: ft_strchr(0x560300852020: "teste", 0: '\0'): expected: 0x560300852025, yours: (nil)
+Error in test 5: ft_strchr(0x560300852020: "teste", 357: 'e'): expected: 0x560300852021, yours: (nil)
+Error in test 6: ft_strchr(0x560300852020: "teste", 1024: '\0'): expected: 0x560300852025, yours: (nil)
+
+For ft_strrchr, in /nfs/homes/yadereve/francinette/tests/libft/fsoares/test_strrchr.c:
+
+Error in test 2: ft_strrchr(0x555d8bf5e021: "teste", 0: '\0'): Segmentation fault!
+For ft_memchr, in /nfs/homes/yadereve/francinette/tests/libft/fsoares/test_memchr.c:
+
+Error in test 8: ft_memchr(0x7ffe473e59d0, 334(4e): 'N', 42): expected: 0x7ffe473e59df, yours: (nil)
+Memory content:
+at 0x0x7ffe473e59d0: 3dbf 2b1c 4f31 3545 b921 9b4d fe14 734e ->  =.+.O15E.!.M..sN
+at 0x0x7ffe473e59e0: 4e15 b889 c2c6 132b a853 d133 0dab 814a ->  N......+.S.3...J
+at 0x0x7ffe473e59f0: 6aac 66ba de9c ff97 bd9a e4bb af58 0afd ->  j.f..........X..
+
+
+For ft_strnstr, in /nfs/homes/yadereve/francinette/tests/libft/fsoares/test_strnstr.c:
+
+Error in test 3: ft_strnstr(0x5607649ca02c: "", "", 0): expected: 0x5607649ca02c, yours: (nil)
+Error in test 4: ft_strnstr(0x5607649ca02c: "", "", 1): expected: 0x5607649ca02c, yours: (nil)
+Error in test 5: ft_strnstr(0x5607649ca02c: "", "", 2): expected: 0x5607649ca02c, yours: (nil)
+...
+
+File too large. To see full report open: /nfs/homes/yadereve/francinette/temp/libft/fsoares/error.log
+
+
+Summary: no bonus
+
+Missing functions: toupper, substr, strjoin, strtrim, split, itoa, strmapi, striteri, putchar_fd, putstr_fd, putendl_fd, putnbr_fd
+
+Failed tests: memmove, ft_strrchr, strlcpy, atoi, ft_strlcpy, ft_memcpy, strrchr, ft_atoi, strdup, ft_strchr, ft_memmove, strchr, strnstr, memchr, ft_strnstr, memcpy, ft_strdup, ft_memchr
+
+Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, strlcat, tolower, strncmp, memcmp, calloc
+➜  Libft

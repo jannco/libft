@@ -1,35 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 14:34:58 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/06 15:16:16 by yadereve         ###   ########.fr       */
+/*   Created: 2023/10/06 15:25:30 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/06 19:39:37 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strdup(const char *src)
 {
-	char	*str;
-	size_t	i;
+	char	*dest;
+	size_t	size;
 
-	i = 0;
-	str = s;
-	while (i < n)
-	{
-		str[i] = 0;
-		i++;
-	}
+	size = ft_strlen(src);
+	dest = (char *)malloc((size + 1) * sizeof(char));
+	ft_memcpy(dest, src, size);
+	dest[size] = '\0';
+	return (dest);
 }
 /*
-int main()
+int	main()
 {
-	char buffer[10];
+	char	source[] = "GeeksForGeeks";
 
-	bzero(buffer, sizeof(buffer));
+	char* target = ft_strdup(source);
+	printf("%s", target);
 	return 0;
 } */

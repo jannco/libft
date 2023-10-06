@@ -6,15 +6,15 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:20:34 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/03 16:26:44 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/04 15:04:01 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	while(*s)
+	while (*s)
 	{
-		if(*s == c)
+		if (*s == c)
 			return ((char *)s);
 		s++;
 	}

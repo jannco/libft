@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/06 15:17:17 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/06 17:39:40 by yadereve         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void	*ft_calloc(size_t n, size_t size)
@@ -10,7 +22,7 @@ void	*ft_calloc(size_t n, size_t size)
 	ft_bzero(a, (n * size));
 	return (a);
 }
-
+/*
 int	main(void)
 {
 	int	i, n;
@@ -34,4 +46,4 @@ int	main(void)
 	}
 	free (a);
 	return (0);
-}
+} */

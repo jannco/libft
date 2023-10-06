@@ -6,31 +6,26 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 17:01:13 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/03 17:14:12 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/06 19:25:35 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_strnlen(const char *s)
+#include "libft.h"
+
+size_t	ft_strlen(const char *s)
 {
-	int len;
+	size_t	len;
 
 	len = 0;
-	while (*s)
-	{
-		s++;
+	while (s[len])
 		len++;
-	}
-return (len);
+	return (len);
 }
-
-
-#include <string.h>
-#include <stdio.h>
-
+/*
 int main()
 {
 	char str[] = "Programming is easy.";
 
-	printf("%d\n", ft_strnlen(str));
+	printf("%d\n", ft_strlen(str));
 	printf("%d\n", strlen(str));
-}
+} */

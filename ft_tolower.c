@@ -6,11 +6,13 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:54:57 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/03 14:57:01 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/06 18:26:59 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+#include "libft.h"
+
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		return (c + 32);

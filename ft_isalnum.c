@@ -6,11 +6,13 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 13:57:26 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/03 14:42:23 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:35:29 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalnum (int c)
+#include "libft.h"
+
+int	ft_isalnum(int c)
 {
 	if (c >= 'a' && c <= 'z')
 		return (1);
@@ -21,14 +23,11 @@ int ft_isalnum (int c)
 	else
 		return (0);
 }
-
-#include <stdio.h>
-#include <ctype.h>
-
+/*
 int main()
 {
 	char c = 's';
 
 	printf("%d\n", ft_isalnum(c));
 	printf("%d\n", isalnum(c));
-}
+} */

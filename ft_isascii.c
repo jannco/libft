@@ -6,11 +6,13 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 14:09:05 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/03 14:19:55 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/06 18:20:11 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isascii(int c)
+#include "libft.h"
+
+int	ft_isascii(int c)
 {
 	if (c >= 0 && c <= 127)
 		return (1);
