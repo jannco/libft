@@ -21,17 +21,15 @@ int	ft_atoi(const char *str)
 	menus = 1;
 	result = 0;
 	i = 0;
-	while (str[i] == ' ' || str[i] == '+' || str[i] == '-'
-		|| (str[i] > 8 && str[i] < 14))
+	while (str[i] == ' ' || (str[i] > 8 && str[i] < 14))
+		i++;
+	if (str[i] == '-')
 	{
-		if (str[i] == '-')
-		{
-			menus = -1;
-			i++;
-		}
-		else
-			i++;
+		menus = -1;
+		i++;
 	}
+	else if (str[i] == '+')
+		i++;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		result *= 10;
@@ -41,13 +39,10 @@ int	ft_atoi(const char *str)
 	return (result * menus);
 }
 /*
-#include <stdio.h>
-#include <limits.h>
-
-int main()
+int	main()
 {
-	printf("%d\n", ft_atoi("--\f\n\r\t\v  ++2147483648++ "));
+	printf("%d\n", ft_atoi("\f\n\r\t\v  -2147483648++ "));
+	printf("%d\n", atoi("\f\n\r\t\v  -2147483648++ "));
 	printf("INT_MIN: %d\n", INT_MIN);
 	printf("INT_MAX: %d", INT_MAX);
-}
- */
+} */

@@ -19,25 +19,24 @@ char	*ft_strnstr(const char *str, const char *to_find, size_t len)
 
 	i = 0;
 	j = 0;
-	while (str[i] && i < len)
+	while (str[i])
 	{
-		while (to_find[j] == str[i + j] && str[i + j] != '\0')
-		{
+		while ((to_find[j] == str[i + j]) && str[i + j])
 			j++;
-		}
-		if (to_find[j] == '\0')
+		if (to_find[j] == '\0' && (i + j) <= len)
 			return ((char *)str + i);
+		else if (j > 0)
+			j = 0;
 		i++;
 	}
+	if (str[i] == to_find[j])
+		return ((char *)str + i);
 	return (0);
 }
 /*
-#include <stdio.h>
 int main()
 {
-	char s1[] = {"hello word hello"};
-	char s2[] = {"rd"};
-
-	printf("%s", strnstr(s1, s2, 4));
+	printf("%s\n", ft_strnstr("aaabcabcd", "abcd", 9));
+	printf("%s", strnstr("aaabcabcd", "abcd", 9));
 	return(0);
 } */

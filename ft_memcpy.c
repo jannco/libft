@@ -21,7 +21,7 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	d = dest;
 	if (!dest && !src)
 		return (NULL);
-	while (--n)
+	while (n--)
 		*(d++) = *(s++);
 	return (dest);
 }

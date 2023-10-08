@@ -10,25 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
+	char	ch;
+
+	ch = c;
+	while (*s && *s != ch)
 		s++;
-	}
+	if (*s == ch)
+		return ((char *)s);
 	return (0);
 }
 /*
-#include <string.h>
-#include <stdio.h>
-
 int main()
 {
-	char c = 'a';
-	char str[] = "Programming is easy.";
+	char str[] = "teste";
 
-	printf("%s\n", ft_strchr(str, c));
-	printf("%s\n", strchr(str, c));
+	printf("|%s|\n", ft_strchr(str, 1024));
+	printf("|%s|", strchr(str, 1024));
 } */

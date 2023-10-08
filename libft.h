@@ -18,6 +18,7 @@
 # include <stdio.h>
 # include <string.h>
 # include <ctype.h>
+# include <limits.h>
 
 typedef struct s_list
 {
@@ -40,6 +41,7 @@ void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *str, int c, size_t n);
+char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *src);
 char	*ft_strnstr(const char *str, const char *to_find, size_t len);

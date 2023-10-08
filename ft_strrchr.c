@@ -14,28 +14,29 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	const char	*lastchar;
+	int			i;
+	char		ch;
+	const char	*str;
 
-	lastchar = 0;
-	while (*s)
+	ch = c;
+	i = ft_strlen(s);
+	str = s + i;
+	while (i-- >= 0)
 	{
-		if (*s == c)
-			lastchar = s;
-		s++;
+		if (*str == ch)
+			return ((char *)str);
+		str--;
 	}
-	while (*lastchar)
-	{
-		return ((char *)lastchar);
-		lastchar++;
-	}
+	if (c == '\0')
+		return ((char *)str);
 	return (0);
 }
 /*
-int main()
+int	main(void)
 {
-	char c = 'a';
-	char str[] = "Programming is easy.";
+	char	c = 'b';
+	char	*str = "bonjour";
 
 	printf("%s\n", ft_strrchr(str, c));
-	printf("%s\n", strrchr(str, c));
+	printf("%s", strrchr(str, c));
 } */
