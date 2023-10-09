@@ -14,20 +14,17 @@
 
 int	ft_memcmp(const void *str1, const void *str2, size_t n)
 {
-	const unsigned char	*bytestr1;
-	const unsigned char	*bytestr2;
-	size_t				i;
+	const unsigned char	*s1;
+	const unsigned char	*s2;
 
-	i = 0;
-	bytestr1 = str1;
-	bytestr2 = str2;
-	while (i < n)
+	s1 = str1;
+	s2 = str2;
+	while (n--)
 	{
-		if ((bytestr1[i] - bytestr2[i]) < 0)
-			return (-1);
-		else if ((bytestr1[i] - bytestr2[i]) > 0)
-			return (1);
-		i++;
+		if (*s1 != *s2)
+			return (*s1 - *s2);
+		s1++;
+		s2++;
 	}
 	return (0);
 }
@@ -39,11 +36,11 @@ int main ()
    int ret1;
    int ret2;
 
-	memcpy(str1, "abcdyf", 6);
-	memcpy(str2, "ABCDEF", 6);
-	ret1 = ft_memcmp(str1, str2, 5);
+	// memcpy(str1, "abcdyf", 6);
+	// memcpy(str2, "ABCDEF", 6);
+	ret1 = ft_memcmp("t\200", "t\0", 2);
 	printf("my: %d\n", ret1);
-	ret2 = memcmp(str1, str2, 5);
+	ret2 = memcmp("t\200", "t\0", 2);
 	printf("or: %d\n", ret2);
 	return (0);
 } */

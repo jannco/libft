@@ -19,12 +19,13 @@ int	ft_countwords(const char *s, char c)
 
 	i = 0;
 	count = 0;
+	while (s[i] && s[i] == c)
+		i++;
 	while (s[i])
 	{
 		while (s[i] && s[i] != c)
 			i++;
-		if (s[i - 1])
-			count++;
+		count++;
 		while (s[i] && s[i] == c)
 			i++;
 	}
@@ -40,6 +41,8 @@ void	ft_wordlen(char **result, const char *s, char c)
 	con_i = 0;
 	count = 0;
 	i = 0;
+	while (s[i] && s[i] == c)
+		i++;
 	while (s[i])
 	{
 		while (s[i] && s[i] != c)
@@ -47,12 +50,9 @@ void	ft_wordlen(char **result, const char *s, char c)
 			con_i++;
 			i++;
 		}
-		if (s[i - 1] != '\0')
-		{
-			result[count] = (char *)malloc((con_i + 1) * sizeof(char));
-			count++;
-			con_i = 0;
-		}
+		result[count] = (char *)malloc((con_i + 1) * sizeof(char));
+		count++;
+		con_i = 0;
 		while (s[i] && s[i] == c)
 			i++;
 	}
@@ -67,6 +67,8 @@ void	ft_cpystr(char **result, const char *s, char c)
 	i = 0;
 	con_i = 0;
 	count = 0;
+	while (s[i] && s[i] == c)
+		i++;
 	while (s[i])
 	{
 		while (s[i] && s[i] != c)
@@ -75,12 +77,9 @@ void	ft_cpystr(char **result, const char *s, char c)
 			i++;
 			con_i++;
 		}
-		if (s[i - 1] != '\0')
-		{
-			result[count][con_i] = '\0';
-			count++;
-			con_i = 0;
-		}
+		result[count][con_i] = '\0';
+		count++;
+		con_i = 0;
 		while (s[i] && s[i] == c)
 			i++;
 	}
@@ -93,6 +92,8 @@ char	**ft_split(char const *s, char c)
 
 	count = ft_countwords(s, c);
 	result = (char **)malloc((count + 1) * sizeof(char *));
+	if (result == NULL)
+		return (NULL);
 	result[count] = NULL;
 	ft_wordlen(result, s, c);
 	ft_cpystr(result, s, c);
@@ -101,7 +102,7 @@ char	**ft_split(char const *s, char c)
 /*
 int	main()
 {
-	char s[] = "Hello World This Is Splitting";
+	char *s = "      split       this for   me  !";
 	char **result;
 	char c = ' ';
 
