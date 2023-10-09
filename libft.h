@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:38:10 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/06 19:08:51 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/09 16:30:39 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *src);
 char	*ft_strnstr(const char *str, const char *to_find, size_t len);
 char	*ft_strrchr(const char *s, int c);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlcat(char *dest, const char *src, size_t destsize);
 size_t	ft_strlcpy(char *dest, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
