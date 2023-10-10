@@ -44,7 +44,7 @@ void	*ft_memset(void *str, int c, size_t n);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *src);
-
+char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strnstr(const char *str, const char *to_find, size_t len);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
