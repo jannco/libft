@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 15:24:25 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/09 19:51:12 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/10 20:06:49 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,35 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*result;
 	size_t	i;
 	size_t	j;
-	size_t	slen;
+	size_t	buf;
 
 	i = 0;
 	j = 0;
-	slen = strlen(s);
-	if (len <= slen)
-		slen = len;
-	result = (char *)malloc((slen + 1) * sizeof(char));
-	if (result == NULL)
+	buf = 0;
+	if (!s)
 		return (NULL);
-	result[slen] = '\0';
-	if (slen < start)
-		free(result);
-	while (s[i] && slen >= start)
+	if (strlen(s) > start)
+		buf = strlen(s) - start;
+	if (buf > len)
+		buf = len;
+	result = (char *)malloc(((buf) + 1) * sizeof(*s));
+	if (!result)
+		return (NULL);
+	while (s[i])
 	{
-		while (slen > j && i >= start)
-			result[j++] = s[i++];
+		if (len > j && i >= start)
+			result[j++] = s[i];
 		i++;
 	}
+	result[j] = '\0';
 	return (result);
 }
-
+/*
 int main()
 {
 	char *s;
 
-	s = ft_substr("", 1, 1);
+	s = ft_substr("wer", 1, 1);
 	printf("%s", s);
-	if (s != NULL)
-		free(s);
-}
+	free(s);
+} */
