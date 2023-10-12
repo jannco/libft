@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:38:10 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/10 20:08:37 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/12 17:28:35 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	*ft_memchr(const void *str, int c, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t n);
 void	*ft_memmove(void *dest, const void *src, size_t n);
 void	*ft_memset(void *str, int c, size_t n);
+char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
 char	*ft_strtrim(char const *s1, char const *set);
 char	*ft_strchr(const char *s, int c);

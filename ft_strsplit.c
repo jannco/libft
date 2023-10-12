@@ -1,19 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 15:02:44 by yadereve          #+#    #+#             */
-/*   Updated: 2023/09/15 11:04:57 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:42:12 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 
-int	ft_len(char **strs, int size, char *sep)
+static	int	ft_len(char **strs, int size, char *sep)
 {
 	int	i;
 	int	j;
@@ -36,7 +36,7 @@ int	ft_len(char **strs, int size, char *sep)
 	return (result);
 }
 
-void	ft_str(char *str, char *result, int *i)
+static	void	ft_str(char *str, char *result, int *i)
 {
 	int	j;
 

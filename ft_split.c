@@ -6,13 +6,13 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:20:34 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/04 15:04:01 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:41:43 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_countwords(const char *s, char c)
+static	int	ft_countwords(const char *s, char c)
 {
 	int	i;
 	int	count;
@@ -32,7 +32,7 @@ int	ft_countwords(const char *s, char c)
 	return (count);
 }
 
-void	ft_wordlen(char **result, const char *s, char c)
+static	void	ft_wordlen(char **result, const char *s, char c)
 {
 	int	con_i;
 	int	count;
@@ -58,7 +58,7 @@ void	ft_wordlen(char **result, const char *s, char c)
 	}
 }
 
-void	ft_cpystr(char **result, const char *s, char c)
+static	void	ft_cpystr(char **result, const char *s, char c)
 {
 	int	i;
 	int	con_i;
