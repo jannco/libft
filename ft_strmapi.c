@@ -1,68 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/12 15:38:43 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/13 19:11:15 by yadereve         ###   ########.fr       */
+/*   Created: 2023/10/14 13:39:51 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/15 12:24:39 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_countnum(int n)
-{
-	int	i;
-	int	nb;
-
-	i = 0;
-	nb = n;
-	while (nb != 0)
-	{
-		nb /= 10;
-		i++;
-	}
-	if (n <= 0)
-		i++;
-	return (i);
-}
-
-char	*ft_itoa(int n)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
-	int		i;
-	int		menus;
+	size_t	i;
 
 	i = 0;
-	menus = 1;
-	if (n < 0)
-	{
-		menus = -1;
-		i++;
-	}
-	i = ft_countnum(n);
-	str = (char *)malloc((i + 1) * sizeof(char));
+	str = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!str)
 		return (NULL);
-	str[i] = '\0';
-	while (i - 1 >= 0)
+	while (s[i])
 	{
-		str[i - 1] = ((n % 10) * menus) + '0';
-		n /= 10;
-		i--;
+		str[i] = (*f)(i, s[i]);
+		i++;
 	}
-	if (menus < 0)
-		str[0] = '-';
+	str[i] = '\0';
 	return (str);
 }
 /*
+char	f(unsigned int i, char c)
+{
+	return (char)(i + c);
+}
+
 int	main()
 {
-	char	*str;
+	char*	str2;
 
-	str = ft_itoa(-3879);
-	printf("%s\n", str);
-	free(str);
+	str2 = ft_strmapi("abcd0 ", *f);
+	printf("or: |abcd0 | -> |aceg4%%|\n");
+	printf("my: |abcd0 | -> |%s|\n", str2);
+	free(str2);
+	str2 = ft_strmapi("", *f);
+	printf("or: || -> ||\n");
+	printf("my: || -> |%s|", str2);
+	free(str2);
+	return (0);
 } */

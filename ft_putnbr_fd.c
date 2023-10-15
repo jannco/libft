@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/10 10:25:30 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/15 12:23:51 by yadereve         ###   ########.fr       */
+/*   Created: 2023/10/15 19:42:57 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/15 20:21:16 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strjoin(char const *s1, char const *s2)
+void	ft_putnbr_fd(int n, int fd)
 {
-	char	*str;
-	size_t	i;
+	char	*s;
 
-	i = 0;
-	if (!s1 || !s2)
-		return (NULL);
-	str = (char *)malloc((ft_strlen(s1) + ft_strlen(s2) +1) * sizeof(char));
-	if (!str)
-		return (NULL);
-	while (*s1)
-		str[i++] = *(s1++);
-	while (*s2)
-		str[i++] = *(s2++);
-	str[i] = '\0';
-	return (str);
+	s = ft_itoa(n);
+	write(fd, s, ft_strlen(s));
 }
-/*
-int	main(void)
+
+int	main()
 {
-	puts(ft_strjoin("asd", "qwe"));
-} */
+	int	fd;
+	int	n = -2147483647 -1;
+
+	fd = open("file.txt", O_RDWR);
+	if (fd == -1)
+	{
+		perror("open");
+		return (1);
+	}
+	printf("fd = %d\n", fd);
+	ft_putnbr_fd(n, fd);
+	close(fd);
+	return (0);
+}
