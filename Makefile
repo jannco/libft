@@ -15,7 +15,18 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 
 OBJS = ${SRCS:.c=.o}
 
-INCLUDES = -I.
+B = ft_lstnew.c
+			ft_lstnew.c \
+			# ft_lstadd_front.c \
+			# ft_lstsize.c \
+			# ft_lstlast.c \
+			# ft_lstadd_back.c \
+			# ft_lstdelone.c \
+			# ft_lstclear.c \
+			# ft_lstiter.c \
+			# ft_lstmap.c \
+
+B_OBJS = ${B:.c=.o}
 
 CC		= cc
 RM		= rm -f
@@ -24,8 +35,8 @@ CFLAGS = -Wall -Wextra -Werror
 
 all: ${NAME} ${OBJS}
 
-.c.o:
-		${CC} ${CFLAGS} ${INCLUDES} -g -c $< -o ${<:.c=.o}
+bonus: ${B_OBJS}
+		ar rcs ${NAME} ${B_OBJS}
 
 $(NAME): ${OBJS}
 		ar rcs ${NAME} ${OBJS}
@@ -38,4 +49,4 @@ fclean:	clean
 
 re:		fclean all
 
-.PHONY: clean fclean all re norme
+.PHONY: all bonus clean fclean re
