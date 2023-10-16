@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:20:34 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/15 20:04:09 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:54:01 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ static	size_t	ft_wordlen(char **result, const char *s, char c)
 			con_i++;
 			i++;
 		}
-		result[count] = (char *)malloc((con_i + 1) * sizeof(char));
+		result[count] = (char *)ft_calloc(con_i + 1, sizeof(char));
 		if (result[count] == NULL)
 		{
 			ft_free(result, count - 1);

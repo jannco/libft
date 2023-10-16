@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/12 15:38:43 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/16 11:10:55 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/16 18:50:51 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ char	*ft_itoa(int n)
 		i++;
 	}
 	i = ft_countnum(n);
-	str = (char *)malloc((i + 1) * sizeof(char));
+	str = (char *)ft_calloc(i + 1, sizeof(char));
 	if (!str)
 		return (NULL);
 	str[i] = '\0';

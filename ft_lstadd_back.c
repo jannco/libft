@@ -1,39 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/15 19:42:57 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/16 18:37:33 by yadereve         ###   ########.fr       */
+/*   Created: 2023/10/16 20:32:53 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/16 22:26:07 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	char	*s;
+	t_list *current;
 
-	s = ft_itoa(n);
-	write(fd, s, ft_strlen(s));
-	free(s);
-}
-/*
-int	main()
-{
-	int	fd;
-	int	n = -2147483647 -1;
-
-	fd = open("file.txt", O_CREAT | O_RDWR);
-	if (fd == -1)
+	current = *lst;
+	while (current)
 	{
-		perror("open");
-		return (1);
+		current = current->next;
 	}
-	printf("fd = %d\n", fd);
-	ft_putnbr_fd(n, fd);
-	close(fd);
-	return (0);
-} */
+	current->next = new;
+	current->next->next = NULL;
+}
