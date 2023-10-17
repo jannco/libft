@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 16:56:42 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/16 17:45:46 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/17 16:33:48 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ t_list	*ft_lstnew(void *content)
 	if (!new_elm)
 		return (0);
 	new_elm->content = content;
-	new_elm->next = NULL;
 	return (new_elm);
 }
 /*

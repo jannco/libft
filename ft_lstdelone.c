@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 21:44:50 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/17 16:39:30 by yadereve         ###   ########.fr       */
+/*   Created: 2023/10/17 14:44:36 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/17 14:52:40 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	if (fd < 0)
-		return ;
-	if (!c)
-		return ;
-	write(fd, &c, 1);
+	if (lst)
+	{
+		del(lst->content);
+		free(lst);
+	}
 }
-/*
-int	main()
-{
-	int	fd;
-	char c = 'a';
-
-	fd = open ("file.txt", O_RDWR);
-	if (fd == -1)
-		return (-1);
-	printf("fd = %d\n", fd);
-	ft_putchar_fd(c, fd);
-	close(fd);
-	return (0);
-} */

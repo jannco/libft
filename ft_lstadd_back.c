@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 20:32:53 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/16 22:26:07 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/17 13:43:07 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	t_list *current;
+	t_list	*current;
 
-	current = *lst;
-	while (current)
+	if (!lst || !new)
+		return ;
+	if (!(*lst))
+		*lst = new;
+	else
 	{
-		current = current->next;
+		current = *lst;
+		while (current->next)
+		{
+			current = current->next;
+		}
+		current->next = new;
 	}
-	current->next = new;
-	current->next->next = NULL;
 }

@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 21:44:50 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/17 16:39:30 by yadereve         ###   ########.fr       */
+/*   Created: 2023/10/17 15:07:12 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/17 15:40:58 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (fd < 0)
-		return ;
-	if (!c)
-		return ;
-	write(fd, &c, 1);
-}
-/*
-int	main()
-{
-	int	fd;
-	char c = 'a';
+	t_list	*current;
 
-	fd = open ("file.txt", O_RDWR);
-	if (fd == -1)
-		return (-1);
-	printf("fd = %d\n", fd);
-	ft_putchar_fd(c, fd);
-	close(fd);
-	return (0);
-} */
+	if (lst == NULL)
+		return (NULL);
+	current = lst;
+	while (current->next != NULL)
+	{
+		current = current->next;
+	}
+	return (current);
+}

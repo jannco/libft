@@ -1,36 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/14 21:44:50 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/17 16:39:30 by yadereve         ###   ########.fr       */
+/*   Created: 2023/10/17 14:54:18 by yadereve          #+#    #+#             */
+/*   Updated: 2023/10/17 15:03:04 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_putchar_fd(char c, int fd)
+void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	if (fd < 0)
-		return ;
-	if (!c)
-		return ;
-	write(fd, &c, 1);
-}
-/*
-int	main()
-{
-	int	fd;
-	char c = 'a';
+	t_list	*lst2;
 
-	fd = open ("file.txt", O_RDWR);
-	if (fd == -1)
-		return (-1);
-	printf("fd = %d\n", fd);
-	ft_putchar_fd(c, fd);
-	close(fd);
-	return (0);
-} */
+	lst2 = *lst;
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		*lst = lst2->next;
+		del(lst2->content);
+		free(lst2);
+		lst2 = *lst;
+	}
+}

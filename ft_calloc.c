@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:17:17 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/06 17:39:40 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/17 14:37:16 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	*ft_calloc(size_t n, size_t size)
 	void	*a;
 
 	a = (void *) malloc(n * size);
-	if (a == NULL)
+	if (!a)
 		return (NULL);
 	ft_bzero(a, (n * size));
 	return (a);
