@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 16:25:24 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/17 16:35:48 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/17 20:47:26 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_lstiter(t_list *lst, void (*f)(void *))
 	t_list	*current;
 
 	current = lst;
-	while (current->next != NULL)
+	if (current && f)
 	{
-		f(current->content);
-		current = current->next;
+		while (current)
+		{
+			f(current->content);
+			current = current->next;
+		}
 	}
 }
