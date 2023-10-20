@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/14 21:44:50 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/17 16:39:30 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/18 18:41:06 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 void	ft_putchar_fd(char c, int fd)
 {
 	if (fd < 0)
-		return ;
-	if (!c)
 		return ;
 	write(fd, &c, 1);
 }

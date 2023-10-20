@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 10:25:25 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/17 16:42:31 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:22:39 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,17 @@
 
 void	ft_putstr_fd(char *s, int fd)
 {
-	if (fd < 0)
-		return ;
-	if (!s)
-		return ;
-	write(fd, s, ft_strlen(s));
+	int	i;
+
+	i = 0;
+	if (s && fd)
+	{
+		while (s[i])
+		{
+			ft_putchar_fd(s[i], fd);
+			i++;
+		}
+	}
 }
 /*
 int	main()

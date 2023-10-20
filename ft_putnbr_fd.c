@@ -6,31 +6,44 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/15 19:42:57 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/17 16:41:39 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/18 20:11:33 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
+static unsigned int	ft_nb_pos(int n)
+{
+	if (n < 0)
+		return (n * (-1));
+	else
+		return (n);
+}
+
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s;
+	unsigned int	nb;
 
-	if (fd < 0)
-		return ;
-	if (!n)
-		return ;
-	s = ft_itoa(n);
-	write(fd, s, ft_strlen(s));
-	free(s);
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+	}
+	nb = ft_nb_pos(n);
+	if (nb >= 10)
+	{
+		ft_putnbr_fd(nb / 10, fd);
+		ft_putnbr_fd(nb % 10, fd);
+	}
+	else
+		ft_putchar_fd(nb + '0', fd);
 }
 /*
 int	main()
 {
 	int	fd;
-	int	n = 10000;
+	int	n = 00000;
 
-	fd = open("file.txt", O_CREAT | O_RDWR);
+	fd = open("file.txt", O_RDWR |O_CREAT, 0644);
 	if (fd == -1)
 	{
 		perror("open");

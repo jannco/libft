@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 15:45:29 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/06 17:54:28 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/20 11:17:36 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dest, const char *src, size_t size)
 	i = 0;
 	if (size != 0)
 	{
-		while (src[i] != '\0' && i < size - 1)
+		while (src[i] && i < size - 1)
 		{
 			dest[i] = src[i];
 			i++;
