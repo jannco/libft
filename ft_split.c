@@ -6,11 +6,19 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:20:34 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/20 10:56:15 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/20 15:42:17 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	**ft_free(char **result, int i)
+{
+	while (i >= 0)
+		free(result[i--]);
+	free(result);
+	return (NULL);
+}
 
 static size_t	ft_countwords(const char *s, char c)
 {
@@ -39,7 +47,6 @@ static char	**ft_fill(char **result, char const *s, char c)
 	size_t	res_i;
 
 	i = 0;
-	start = 0;
 	res_i = 0;
 	while (1)
 	{
@@ -50,10 +57,13 @@ static char	**ft_fill(char **result, char const *s, char c)
 		start = i;
 		while (s[i] && s[i] != c)
 			i++;
-		if (start > ft_strlen(s))
-			result[res_i++] = NULL;
-		else
-			result[res_i++] = ft_substr(s, start, i - start);
+		result[res_i] = ft_substr(s, start, i - start);
+		if (!result[res_i])
+		{
+			result = ft_free(result, res_i);
+			return (result);
+		}
+		res_i++;
 	}
 	return (result);
 }
@@ -68,6 +78,8 @@ char	**ft_split(char const *s, char c)
 	if (!result)
 		return (NULL);
 	result = ft_fill(result, s, c);
+	if (!result)
+		return (NULL);
 	result[words] = NULL;
 	return (result);
 }

@@ -1,0 +1,5 @@
+[1;31mError[0m in test 1: [0;36mft_lstnew((nil): <NULL>)[0m: expected 16 bytes, allocated 0 bytes
+Could not find the corresponding allocation or the pointer 0x4a5e6a0
+[1;31mError[0m in test 2: [0;36mft_lstnew(0x10d12d: "hahaha")[0m: expected 16 bytes, allocated 0 bytes
+Could not find the corresponding allocation or the pointer 0x4a607c0
+
