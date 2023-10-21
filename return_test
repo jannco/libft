@@ -374,7 +374,7 @@ Failed tests: memmove, ft_strrchr, strlcpy, atoi, ft_strlcpy, ft_memcpy, strrchr
 Passed tests: isalpha, isdigit, isalnum, isascii, isprint, strlen, memset, bzero, strlcat, tolower, strncmp, memcmp, calloc
 ➜  Libft
 
-
+################################################################################
 
 
 Failed tests: 	putnbr_fd, putchar_fd, lstmap, lstnew, lstadd_front, putendl_fd,
@@ -546,4 +546,3 @@ ft_lstadd_front : OK
 ==454024==
 ==454024== For lists of detected and suppressed errors, rerun with: -s
 ==454024== ERROR SUMMARY: 11 errors from 11 contexts (suppressed: 0 from 0)
-

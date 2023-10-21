@@ -6,13 +6,13 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:20:34 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/20 15:42:17 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/21 18:06:19 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	**ft_free(char **result, int i)
+static char	**ft_free(char **result, int i)
 {
 	while (i >= 0)
 		free(result[i--]);
