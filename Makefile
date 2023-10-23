@@ -6,13 +6,13 @@
 #    By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 15:50:27 by yadereve          #+#    #+#              #
-#    Updated: 2023/10/23 15:50:28 by yadereve         ###   ########.fr        #
+#    Updated: 2023/10/23 16:54:58 by yadereve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = cc
 
 RM = rm -f
 
