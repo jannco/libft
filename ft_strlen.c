@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 17:01:13 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/19 19:33:20 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:43:34 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ size_t	ft_strlen(const char *s)
 	size_t	len;
 
 	len = 0;
-	while (s[len])
+	while (*(s + len))
 		len++;
 	return (len);
 }

@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 16:00:17 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/04 15:05:01 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:45:29 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,28 +14,25 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int			i;
-	char		ch;
-	const char	*str;
+	char const	*str;
 
-	ch = c;
-	i = ft_strlen(s);
-	str = s + i;
-	while (i-- >= 0)
+	str = NULL;
+	while (*s)
 	{
-		if (*str == ch)
-			return ((char *)str);
-		str--;
+		if (*s == (char)c)
+			str = s;
+		s++;
 	}
-	if (c == '\0')
+	if (*s == (char)c)
+		return ((char *)s);
+	else
 		return ((char *)str);
-	return (0);
 }
 /*
 int	main(void)
 {
 	char	c = 'b';
-	char	*str = "bonjour";
+	char	*str = "123456789";
 
 	printf("%s\n", ft_strrchr(str, c));
 	printf("%s", strrchr(str, c));

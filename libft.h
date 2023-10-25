@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 17:38:10 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/24 11:11:15 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:37:15 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 # include <ctype.h>
 # include <fcntl.h>
 # include <stdio.h>
-// # include <string.h>
-// # include <limits.h>
+# include <string.h>
+# include <limits.h>
 
 typedef struct s_list
 {

@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/18 18:38:20 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/21 18:41:31 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/25 11:23:01 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*new_content;
 	t_list	*process;
 
-	if (!lst && !f)
+	if (!lst && !f && !del)
 		return (NULL);
 	new_lst = NULL;
 	while (lst)
