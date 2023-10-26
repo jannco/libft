@@ -6,7 +6,7 @@
 #    By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 15:50:27 by yadereve          #+#    #+#              #
-#    Updated: 2023/10/23 16:54:58 by yadereve         ###   ########.fr        #
+#    Updated: 2023/10/25 12:19:19 by yadereve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ B = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstadd_back.c ft_lstlast.c\
 
 B_OBJS = $(B:.c=.o)
 
-all: ${NAME} ${OBJS}
+all: ${NAME}
 
 bonus: ${B_OBJS}
 		ar rcs ${NAME} ${B_OBJS}
