@@ -6,7 +6,7 @@
 /*   By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 19:01:35 by yadereve          #+#    #+#             */
-/*   Updated: 2023/10/16 20:32:09 by yadereve         ###   ########.fr       */
+/*   Updated: 2023/10/29 15:30:40 by yadereve         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	ft_lstsize(t_list *lst)
 /*
 int	main()
 {
-	t_list *list = NULL;  // Ініціалізуємо пустий список
+	t_list *list = NULL;
 	int size = -1;
 
 	// Test 1

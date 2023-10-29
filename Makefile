@@ -6,7 +6,7 @@
 #    By: yadereve <yadereve@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/23 15:50:27 by yadereve          #+#    #+#              #
-#    Updated: 2023/10/25 12:19:19 by yadereve         ###   ########.fr        #
+#    Updated: 2023/10/29 15:25:33 by yadereve         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,16 +36,16 @@ B_OBJS = $(B:.c=.o)
 all: ${NAME}
 
 bonus: ${B_OBJS}
-		ar rcs ${NAME} ${B_OBJS}
+		@ar rcs ${NAME} ${B_OBJS}
 
 $(NAME): ${OBJS}
-		ar rcs ${NAME} ${OBJS}
+		@ar rcs ${NAME} ${OBJS}
 
 clean:
-		${RM} ${OBJS}
+		@${RM} ${OBJS} ${B_OBJS}
 
 fclean:	clean
-		${RM} ${NAME}
+		@${RM} ${NAME}
 
 re:		fclean all
 
